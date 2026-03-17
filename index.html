@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BOOK GRID</title>
+<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<div class="top-util">
+<div class="container util-inner">
+<div class="util-left">
+<a href="#">매장안내</a>
+<a href="#">고객센터</a>
+<a href="#">이벤트</a>
+</div>
+<div class="util-right">
+<a href="#">로그인</a>
+<a href="#">회원가입</a>
+<a href="#">주문조회</a>
+</div>
+</div>
+</div>
+
+<header class="site-header">
+<div class="top-banner">
+<div class="container top-banner-inner">
+<div class="top-banner-left">
+    <a href="#">베스트셀러</a>
+    <a href="#">신상품</a>
+    <a href="#">이벤트</a>
+    <a href="#">회원혜택</a>
+</div>
+<div class="top-banner-right">
+    <span>오늘의 추천 도서</span>
+</div>
+</div>
+</div>
+
+<div class="main-header">
+<div class="container main-header-inner">
+<h1 class="logo">
+    <a href="#">BOOK GRID</a>
+</h1>
+
+<form class="search-box" id="searchForm">
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="찾고 싶은 책을 검색해보세요"
+    />
+    <button type="submit">검색</button>
+</form>
+
+<div class="header-actions">
+    <a href="#" class="text-link">장바구니</a>
+    <span class="divider">|</span>
+    <a href="#" class="text-link">로그인/회원가입</a>
+    <button
+    class="menu-toggle"
+    id="menuBtn"
+    type="button"
+    aria-label="메뉴 열기"
+    >
+    ☰
+    </button>
+</div>
+</div>
+</div>
+
+<nav class="category-nav">
+<div class="container category-nav-inner">
+<ul class="category-list">
+    <li><a href="#">국내도서</a></li>
+    <li><a href="#">외국도서</a></li>
+    <li><a href="#">eBook</a></li>
+    <li><a href="#">문구/GIFT</a></li>
+    <li><a href="#">중고도서</a></li>
+    <li><a href="#">음반/DVD</a></li>
+    <li><a href="#">매장안내</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="mega-menu" id="megaMenu">
+<div class="container mega-menu-inner">
+<div class="mega-col">
+    <h4>국내도서</h4>
+    <a href="#">소설</a>
+    <a href="#">에세이</a>
+    <a href="#">경제경영</a>
+    <a href="#">자기계발</a>
+</div>
+<div class="mega-col">
+    <h4>외국도서</h4>
+    <a href="#">문학</a>
+    <a href="#">인문</a>
+    <a href="#">예술</a>
+    <a href="#">원서</a>
+</div>
+<div class="mega-col">
+    <h4>eBook</h4>
+    <a href="#">베스트</a>
+    <a href="#">신간</a>
+    <a href="#">오디오북</a>
+    <a href="#">이벤트</a>
+</div>
+<div class="mega-col">
+    <h4>문구/GIFT</h4>
+    <a href="#">노트</a>
+    <a href="#">펜</a>
+    <a href="#">파우치</a>
+    <a href="#">굿즈</a>
+</div>
+</div>
+</div>
+</header>
+
+<main class="page-main">
+<section class="hero-section">
+<div class="container">
+<div class="hero-slider">
+    <div class="hero-track" id="heroTrack"></div>
+
+    <div class="hero-controls">
+    <button id="heroPrev" type="button">이전</button>
+    <div class="hero-dots" id="heroDots"></div>
+    <button id="heroPause" type="button">정지</button>
+    <button id="heroNext" type="button">다음</button>
+    </div>
+</div>
+</div>
+</section>
+
+<section class="content-wrap">
+<div class="container">
+<section class="content-section best-section">
+    <div class="section-head">
+    <div class="section-title-group">
+        <span class="section-label red">BEST</span>
+        <h2>베스트셀러</h2>
+    </div>
+    <button class="section-btn" data-section="best" type="button">새로고침</button>
+    </div>
+    <div class="book-grid five" id="bestBooks"></div>
+</section>
+
+<section class="wide-banner membership-banner">
+    <div class="banner-copy">
+    <span>MEMBERSHIP</span>
+    <strong>신규 회원 특별 혜택</strong>
+    <p>가입만 해도 할인 쿠폰과 적립 혜택을 받아보세요.</p>
+    </div>
+    <a href="#" class="banner-btn">혜택 보기</a>
+</section>
+
+<section class="content-section pick-clean-section">
+    <div class="pick-clean-top">
+    <div class="pick-clean-title-wrap">
+        <h2>오늘의 추천 도서</h2>
+    </div>
+
+    <button class="pick-clean-more" type="button" aria-label="다음 추천 보기">›</button>
+    </div>
+
+    <div class="pick-clean-tabs" id="pickCleanTabs">
+    <button class="pick-clean-tab active" type="button" data-pick-clean="all">종합</button>
+    <button class="pick-clean-tab" type="button" data-pick-clean="korean">국내소설</button>
+    <button class="pick-clean-tab" type="button" data-pick-clean="foreign">외국소설</button>
+    <button class="pick-clean-tab" type="button" data-pick-clean="essay">에세이</button>
+    <button class="pick-clean-tab" type="button" data-pick-clean="business">경제/자기계발</button>
+    <button class="pick-clean-tab" type="button" data-pick-clean="humanities">인문/역사</button>
+    <button class="pick-clean-tab" type="button" data-pick-clean="children">어린이</button>
+    </div>
+
+    <div class="pick-clean-carousel">
+    <button class="pick-clean-arrow left" id="pickCleanPrev" type="button" aria-label="이전">‹</button>
+
+    <div class="pick-clean-track-wrap">
+        <div class="pick-clean-track" id="pickCleanTrack"></div>
+    </div>
+
+    <button class="pick-clean-arrow right" id="pickCleanNext" type="button" aria-label="다음">›</button>
+    </div>
+
+    <div class="pick-clean-dots" id="pickCleanDots"></div>
+</section>
+
+<section class="content-section soft-section">
+    <div class="section-head">
+    <div class="section-title-group">
+        <span class="section-label green">NEW</span>
+        <h2>신간 도서</h2>
+    </div>
+    <button class="section-btn" data-section="new" type="button">새로고침</button>
+    </div>
+    <div class="book-grid five" id="newBooks"></div>
+</section>
+
+<section class="content-section">
+    <div class="section-head">
+    <div class="section-title-group">
+        <span class="section-label gold">BUSINESS</span>
+        <h2>경제경영</h2>
+    </div>
+    <button class="section-btn" data-section="business" type="button">새로고침</button>
+    </div>
+    <div class="book-grid five" id="businessBooks"></div>
+</section>
+
+<section class="content-section">
+    <div class="section-head">
+    <div class="section-title-group">
+        <span class="section-label purple">NOVEL</span>
+        <h2>문학 · 소설</h2>
+    </div>
+    <button class="section-btn" data-section="novel" type="button">새로고침</button>
+    </div>
+    <div class="book-grid five" id="novelBooks"></div>
+</section>
+
+<section class="wide-banner dark">
+    <div class="banner-copy">
+    <span>CURATION</span>
+    <strong>이번 주 독서 큐레이션</strong>
+    <p>분야별 추천과 화제의 책을 한눈에 확인해보세요.</p>
+    </div>
+    <a href="#" class="banner-btn dark-btn">큐레이션 보기</a>
+</section>
+
+<section class="content-section review-section">
+    <div class="section-head">
+    <div class="section-title-group">
+        <span class="section-label pink">REVIEW</span>
+        <h2>독자 리뷰 & 큐레이션</h2>
+    </div>
+    <p class="section-meta">추천 리뷰 모음</p>
+    </div>
+    <div class="review-grid" id="reviewCards"></div>
+</section>
+
+<section class="content-section gift-section">
+    <div class="section-head">
+    <div class="section-title-group">
+        <span class="section-label navy">GIFT</span>
+        <h2>문구 · 기프트</h2>
+    </div>
+    <button class="section-btn" data-section="gift" type="button">새로고침</button>
+    </div>
+    <div class="gift-grid" id="giftItems"></div>
+</section>
+
+<section class="content-section sale-book-section">
+    <div class="section-head">
+    <div class="section-title-group">
+        <span class="section-label sky">SALE</span>
+        <h2>정가 인하 도서</h2>
+    </div>
+    <button class="section-btn" data-section="sale" type="button">새로고침</button>
+    </div>
+    <div class="book-grid five" id="saleBooks"></div>
+</section>
+
+<section class="content-section search-result-section hidden" id="searchSection">
+    <div class="section-head">
+    <div class="section-title-group">
+        <span class="section-label blue">SEARCH</span>
+        <h2>검색 결과</h2>
+    </div>
+    <p class="section-meta" id="searchMeta">도서를 검색해보세요</p>
+    </div>
+    <div class="book-grid five" id="searchBooks"></div>
+</section>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="footer-top">
+<div class="container footer-top-inner">
+<div class="footer-cs">
+    <h3>고객센터</h3>
+    <strong>1544-9020</strong>
+    <p>상담가능시간 평일 09:00 ~ 18:00 / 점심시간 12:15 ~ 13:15</p>
+    <p>대표 메일 <a href="mailto:help@bookgrid.co.kr">help@bookgrid.co.kr</a></p>
+    <p>제휴 문의 <a href="mailto:partner@bookgrid.co.kr">partner@bookgrid.co.kr</a></p>
+
+    <div class="footer-cs-buttons">
+    <a href="#">FAQ</a>
+    <a href="#">1:1 고객상담</a>
+    <a href="#">입점문의</a>
+    </div>
+</div>
+
+<div class="footer-links-group">
+    <div class="footer-links-col">
+    <h4>BOOK GRID</h4>
+    <a href="#">회사소개</a>
+    <a href="#">매장안내</a>
+    <a href="#">나우드림</a>
+    </div>
+
+    <div class="footer-links-col">
+    <h4>비즈니스</h4>
+    <a href="#">입점문의</a>
+    <a href="#">광고안내</a>
+    <a href="#">제휴문의</a>
+    </div>
+
+    <div class="footer-links-col">
+    <h4>쇼핑도우미</h4>
+    <a href="#">도서검색</a>
+    <a href="#">회원등급 혜택</a>
+    <a href="#">주문/배송</a>
+    <a href="#">취소/교환/환불</a>
+    <a href="#">적립금 사용</a>
+    <a href="#">교환권 사용</a>
+    </div>
+
+    <div class="footer-links-col">
+    <h4>고객센터</h4>
+    <a href="#">1:1 고객상담</a>
+    <a href="#">FAQ</a>
+    <a href="#">공지사항</a>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="footer-policy">
+<div class="container footer-policy-inner">
+<nav class="footer-policy-links">
+    <a href="#">이용약관</a>
+    <a href="#">개인정보처리방침</a>
+    <a href="#">영상정보관리방침</a>
+    <a href="#">청소년보호정책</a>
+    <a href="#">이메일 무단 수집거부</a>
+</nav>
+</div>
+</div>
+
+<div class="footer-bottom">
+<div class="container footer-bottom-inner">
+<div class="footer-brand">
+    <p class="footer-brand-kicker">서점다운 서점</p>
+    <h3>BOOK GRID</h3>
+</div>
+
+<div class="footer-company-info">
+    <p>(주)북그리드 <span>|</span> 주소 서울특별시 강남구 테헤란로 123 북그리드빌딩 8층 <span>|</span> 대표이사 북그리드</p>
+    <p>사업자 등록번호 123-45-67890 <span>|</span> 통신판매업신고 2026-서울강남-01234 <span>|</span> 개인정보관리책임자 북그리드</p>
+    <p class="footer-copyright">COPYRIGHT © BOOK GRID INC. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

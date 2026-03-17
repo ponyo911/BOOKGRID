@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOOK GRID - 도서 상세</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/detail.css" />
+</head>
+<body>
+  <div class="top-util">
+    <div class="container util-inner">
+      <div class="util-left">
+        <a href="#">매장안내</a>
+        <a href="#">고객센터</a>
+        <a href="#">이벤트</a>
+      </div>
+      <div class="util-right">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+        <a href="#">주문조회</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header detail-header">
+    <div class="top-banner">
+      <div class="container top-banner-inner">
+        <div class="top-banner-left">
+          <a href="index.html">메인으로</a>
+          <a href="#detailInfo">도서정보</a>
+          <a href="#authorSection">저자소개</a>
+          <a href="#recommendSection">추천도서</a>
+        </div>
+        <div class="top-banner-right">
+          <span>도서 상세 페이지</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-header">
+      <div class="container main-header-inner">
+        <h1 class="logo">
+          <a href="index.html">BOOK GRID</a>
+        </h1>
+
+        <form class="search-box" id="detailSearchForm">
+          <input
+            type="text"
+            id="detailSearchInput"
+            placeholder="책 제목을 입력하면 상세 페이지를 다시 불러옵니다"
+          />
+          <button type="submit">검색</button>
+        </form>
+
+        <div class="header-actions">
+          <a href="#" class="text-link">장바구니</a>
+          <span class="divider">|</span>
+          <a href="#" class="text-link">로그인/회원가입</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main detail-page-main">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">홈</a>
+        <span>›</span>
+        <a href="#">국내도서</a>
+        <span>›</span>
+        <strong id="breadcrumbTitle">도서 상세</strong>
+      </div>
+
+      <section class="detail-hero">
+        <div class="detail-main-column">
+          <div class="detail-top-card">
+            <div class="detail-cover-wrap">
+              <div class="detail-cover-box">
+                <img id="bookThumbnail" src="img/book.jpg" alt="도서 표지" />
+              </div>
+              <div class="detail-cover-actions">
+                <button type="button">미리보기</button>
+                <button type="button">공유하기</button>
+              </div>
+            </div>
+
+            <div class="detail-summary">
+              <div class="detail-badges">
+                <span class="detail-badge red">오늘의 책</span>
+                <span class="detail-badge blue" id="saleBadge">판매중</span>
+              </div>
+
+              <h2 class="detail-title" id="bookTitle">불러오는 중...</h2>
+              <p class="detail-subtitle" id="bookSubtitle">도서 상세 설명을 준비하고 있습니다.</p>
+
+              <dl class="detail-meta-list">
+                <div>
+                  <dt>저자</dt>
+                  <dd id="bookAuthors">-</dd>
+                </div>
+                <div>
+                  <dt>출판사</dt>
+                  <dd id="bookPublisher">-</dd>
+                </div>
+                <div>
+                  <dt>출간일</dt>
+                  <dd id="bookDate">-</dd>
+                </div>
+                <div>
+                  <dt>ISBN</dt>
+                  <dd id="bookIsbn">-</dd>
+                </div>
+              </dl>
+
+              <div class="detail-price-box">
+                <div class="price-line">
+                  <span class="label">정가</span>
+                  <strong id="originPrice">0원</strong>
+                </div>
+                <div class="price-line sale">
+                  <span class="label">판매가</span>
+                  <strong id="salePrice">0원</strong>
+                </div>
+                <div class="price-desc">
+                  <span id="discountText">즉시할인 적용 가능</span>
+                  <span id="pointText">기본 적립 제공</span>
+                </div>
+              </div>
+
+              <div class="quick-info-grid">
+                <article>
+                  <strong>배송안내</strong>
+                  <p>오전 주문 시 빠른 출고 예정</p>
+                </article>
+                <article>
+                  <strong>회원혜택</strong>
+                  <p>등급별 추가 적립과 쿠폰 적용</p>
+                </article>
+                <article>
+                  <strong>상품상태</strong>
+                  <p>새 상품 / 안전포장 발송</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <section class="detail-highlight-grid">
+            <article>
+              <span>MD 한줄평</span>
+              <p id="mdComment">읽는 흐름이 좋고, 책 소개 페이지에 자연스럽게 어울리는 도서입니다.</p>
+            </article>
+            <article>
+              <span>추천 독자</span>
+              <p id="targetReader">처음 읽는 독자부터 깊이 있게 다시 읽고 싶은 독자까지 추천합니다.</p>
+            </article>
+            <article>
+              <span>핵심 키워드</span>
+              <p id="keywordTags">몰입감 · 문장력 · 추천도서</p>
+            </article>
+          </section>
+
+          <section class="event-banner-stack">
+            <article class="event-banner blue-tone">
+              <div>
+                <span>MEMBERSHIP</span>
+                <strong>신규 회원 웰컴 쿠폰</strong>
+                <p>첫 구매라면 할인 쿠폰과 적립 혜택을 함께 받아보세요.</p>
+              </div>
+              <a href="#">혜택 보기</a>
+            </article>
+            <article class="event-banner soft-tone">
+              <div>
+                <span>CURATION</span>
+                <strong>이 책과 함께 많이 본 작품</strong>
+                <p>같은 분위기의 소설, 에세이, 인문서를 한 번에 이어서 살펴볼 수 있습니다.</p>
+              </div>
+              <a href="#recommendSection">추천 도서</a>
+            </article>
+          </section>
+
+          <nav class="detail-tab-nav">
+            <a href="#detailInfo">도서정보</a>
+            <a href="#introSection">책소개</a>
+            <a href="#authorSection">저자소개</a>
+            <a href="#indexSection">목차</a>
+            <a href="#reviewSection">출판사 서평</a>
+          </nav>
+
+          <section class="detail-section" id="detailInfo">
+            <div class="section-head detail-section-head">
+              <div class="section-title-group">
+                <span class="section-label blue">INFO</span>
+                <h2>도서 정보</h2>
+              </div>
+            </div>
+            <div class="info-table-card">
+              <div class="info-row"><span>분류</span><strong id="categoryText">국내도서</strong></div>
+              <div class="info-row"><span>형태</span><strong id="formatText">종이책</strong></div>
+              <div class="info-row"><span>판매지수</span><strong id="saleStatusText">인기 도서</strong></div>
+              <div class="info-row"><span>배송구분</span><strong>당일/익일 출고 가능</strong></div>
+            </div>
+          </section>
+
+          <section class="detail-section" id="introSection">
+            <div class="section-head detail-section-head">
+              <div class="section-title-group">
+                <span class="section-label purple">INTRO</span>
+                <h2>책 소개</h2>
+              </div>
+            </div>
+            <div class="detail-paragraph-card">
+              <p id="introParagraph1"></p>
+              <p id="introParagraph2"></p>
+              <p id="introParagraph3"></p>
+            </div>
+          </section>
+
+          <section class="detail-section" id="authorSection">
+            <div class="section-head detail-section-head">
+              <div class="section-title-group">
+                <span class="section-label green">AUTHOR</span>
+                <h2>저자 소개</h2>
+              </div>
+            </div>
+            <div class="author-card">
+              <div class="author-avatar" id="authorInitial">작</div>
+              <div class="author-copy">
+                <strong id="authorNameBlock">저자 정보 준비 중</strong>
+                <p id="authorDescription"></p>
+              </div>
+            </div>
+          </section>
+
+          <section class="detail-section" id="indexSection">
+            <div class="section-head detail-section-head">
+              <div class="section-title-group">
+                <span class="section-label gold">INDEX</span>
+                <h2>목차</h2>
+              </div>
+            </div>
+            <div class="detail-paragraph-card">
+              <ol class="toc-list" id="tocList"></ol>
+            </div>
+          </section>
+
+          <section class="detail-section" id="reviewSection">
+            <div class="section-head detail-section-head">
+              <div class="section-title-group">
+                <span class="section-label pink">REVIEW</span>
+                <h2>출판사 서평</h2>
+              </div>
+            </div>
+            <div class="detail-paragraph-card">
+              <p id="reviewParagraph1"></p>
+              <p id="reviewParagraph2"></p>
+            </div>
+          </section>
+
+          <section class="detail-section" id="recommendSection">
+            <div class="section-head detail-section-head">
+              <div class="section-title-group">
+                <span class="section-label navy">PICK</span>
+                <h2>이 책과 함께 보면 좋은 책</h2>
+              </div>
+            </div>
+            <div class="recommend-grid" id="recommendGrid"></div>
+          </section>
+        </div>
+
+        <aside class="detail-side-column">
+          <div class="purchase-card">
+            <div class="purchase-top">
+              <strong>구매 정보</strong>
+              <p>실제 결제 기능 대신 UI 연습용 영역입니다.</p>
+            </div>
+
+            <div class="purchase-price-area">
+              <div>
+                <span>판매가</span>
+                <strong id="stickySalePrice">0원</strong>
+              </div>
+              <div>
+                <span>적립예상</span>
+                <strong id="stickyPoint">0P</strong>
+              </div>
+            </div>
+
+            <div class="purchase-count">
+              <span>수량</span>
+              <div class="qty-box">
+                <button type="button" id="qtyMinus">-</button>
+                <strong id="qtyValue">1</strong>
+                <button type="button" id="qtyPlus">+</button>
+              </div>
+            </div>
+
+            <div class="purchase-total">
+              <span>총 상품금액</span>
+              <strong id="totalPrice">0원</strong>
+            </div>
+
+            <div class="purchase-actions">
+              <button type="button" class="ghost-btn">바로구매</button>
+              <button type="button" class="ghost-btn light">선물하기</button>
+              <button type="button" class="main-btn">장바구니 담기</button>
+            </div>
+          </div>
+
+          <div class="mini-list-card">
+            <div class="mini-list-head">
+              <strong>같은 저자/주제 추천</strong>
+            </div>
+            <div id="sideMiniList" class="mini-book-list"></div>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/detail.js"></script>
+</body>
+</html>
