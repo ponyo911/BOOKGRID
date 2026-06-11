@@ -1,4 +1,4 @@
-const KAKAO_REST_API_KEY = "";
+const KAKAO_REST_API_KEY = "88f92f21a2d5eb50a1c4fd850224f55a";
 const KAKAO_BOOK_API_URL = "https://dapi.kakao.com/v3/search/book";
 
 const HERO_BANNERS = [
